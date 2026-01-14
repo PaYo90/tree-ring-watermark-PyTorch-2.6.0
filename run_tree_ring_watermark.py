@@ -1,3 +1,8 @@
+# IMPORTANT: Fix compatibility with pytorch 2.6.0 before importing diffusers - Szymon Zachariasz
+# This fixes the issue where diffusers 0.11.1 tries to import cached_download from huggingface_hub,
+# but cached_download was removed in newer versions (replaced by hf_hub_download)
+import fix_diffusers_compat
+
 import argparse
 import wandb
 import copy
